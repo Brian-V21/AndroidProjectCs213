@@ -1,15 +1,32 @@
 package model;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 import java.io.File;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrdersManager {
+    /**
+     * Singleton instance
+     */
+    private static OrdersManager instance;
+    
     private int nextOrder = 10001;
-    private final ObservableList<Order> placed = FXCollections.observableArrayList();
+    private final ObservableList<Order> placed = new ArrayList<>();
     private Order current = new Order(nextOrder++);
+
+
+    /**
+     * Private Constructor
+     */
+    private OrdersManager() {}
+
+    public static synchronized OrdersManager getInstance() {
+        if (instance == null) {
+            instance = new OrdersManager();
+        }
+        return instance;
+    }
 
     /**
      * To get the current order being used
@@ -23,7 +40,7 @@ public class OrdersManager {
      * To get the list of ordered items
      * @return placed orders
      */
-    public ObservableList<Order> getPlacedOrders() {
+    public List<Order> getPlacedOrders() {
         return placed;
     }
 
@@ -52,19 +69,5 @@ public class OrdersManager {
      */
     public void cancelPlacedOrder(Order o) {
         placed.remove(o);
-    }
-
-    /**
-     * Export orders to a text file
-     * @param file the file that will hold the orders
-     * @throws Exception throw exception to user if not correct file
-     */
-    public void exportOrders(File file) throws Exception {
-        try (PrintWriter pw = new PrintWriter(file, "UTF-8")) {
-            for (Order o : placed) {
-                pw.println(o.recieptText());
-                pw.println("----");
-            }
-        }
     }
 }
