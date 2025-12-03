@@ -1,5 +1,7 @@
 package model;
 
+import java.util.EnumSet;
+
 import enums.DonutFlavor;
 import enums.DonutType;
 
@@ -14,7 +16,7 @@ public class Donut extends MenuItem {
      * @param flavor the flavor of the donut
      * @param qty the number of donuts
      */
-    public Donut(DonutType type, DonutFlavor flavor, int qty) {
+    public Donut(DonutType type, EnumSet<DonutFlavor> flavor, int qty) {
         super(qty);
         this.type = type;
         this.flavor = flavor;

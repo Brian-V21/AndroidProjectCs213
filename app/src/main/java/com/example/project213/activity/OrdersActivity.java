@@ -1,11 +1,11 @@
-package org.example.project4cs213.controller;
+package com.example.project213.activity;
 
 import model.OrdersManager;
 
 /**
  * Controllers that need access to the shared OrdersManager implement this.
  */
-public interface OrdersAware {
+public interface OrdersActivity {
     /**
      * @param manager orders manager
      */

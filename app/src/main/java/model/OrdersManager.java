@@ -12,7 +12,7 @@ public class OrdersManager {
     private static OrdersManager instance;
     
     private int nextOrder = 10001;
-    private final ObservableList<Order> placed = new ArrayList<>();
+    private final List<Order> placed = new ArrayList<>();
     private Order current = new Order(nextOrder++);
 
 
