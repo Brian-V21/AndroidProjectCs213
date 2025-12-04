@@ -51,7 +51,7 @@ public class SandwichActivity extends AppCompatActivity {
         sandwichImage = findViewById(R.id.sandwichImage);
         addButton = findViewById(R.id.addSandwichButton);
 
-        addOnsAdapter = new SandwichAddOnsAdapter(SandwichAddOn.values(), selected -> updatePrice());
+        addOnsAdapter = new SandwichAddOnsAdapter(SandwichAddOn.values(), () -> updatePrice());
 
         // Setup Bread spinner
         ArrayAdapter<Bread> breadAdapter = new ArrayAdapter<>(this,
