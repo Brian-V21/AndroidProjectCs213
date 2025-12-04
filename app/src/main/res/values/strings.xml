@@ -20,4 +20,9 @@
     <string name="coffee_size_label">Cup Size:</string>
     <string name="coffee_addins_label">Add-ins:</string>
     <string name="coffee_preview_label">Coffee Preview</string>
+
+    <string name="sandwich_bread_label">Bread:</string>
+    <string name="sandwich_protein_label">Protein:</string>
+    <string name="sandwich_addons_label">Add-ons:</string>
+    <string name="sandwich_preview_label">Sandwich Preview</string>
 </resources>
