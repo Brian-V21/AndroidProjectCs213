@@ -31,6 +31,9 @@ public class CurrentOrderActivity extends AppCompatActivity implements OrdersAct
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_order);
 
+        // get singleton manager
+        ordersManager = OrdersManager.getInstance();
+
         // Initialize views
         itemsListView = findViewById(R.id.itemsListView);
         subtotalLabel = findViewById(R.id.subtotalLabel);
@@ -55,12 +58,6 @@ public class CurrentOrderActivity extends AppCompatActivity implements OrdersAct
         clearBtn.setOnClickListener(v -> clearCurrentOrder());
         placeOrderBtn.setOnClickListener(v -> placeOrder());
 
-        refresh();
-    }
-
-    @Override
-    public void setOrdersManager(OrdersManager manager) {
-        this.ordersManager = manager;
         refresh();
     }
 
