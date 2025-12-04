@@ -40,7 +40,10 @@ public class Donut extends MenuItem {
                 break;
             default: unit = 0;
         }
-        return unit * quantity;
+
+        double totalCost = unit * flavor.size();
+
+        return totalCost * quantity;
     }
 
     /**

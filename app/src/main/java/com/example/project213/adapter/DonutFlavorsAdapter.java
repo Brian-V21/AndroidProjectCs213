@@ -54,6 +54,18 @@ public class DonutFlavorsAdapter extends RecyclerView.Adapter<DonutFlavorsAdapte
             case GLAZED:
                 resId = R.drawable.flavor_glazed;
                 break;
+            case STRAWBERRY:
+                resId = R.drawable.flavor_strawberry;
+                break;
+            case BLUEBERRY:
+                resId = R.drawable.flavor_blueberry;
+                break;
+            case MAPLE:
+                resId = R.drawable.flavor_maple;
+                break;
+            case JELLY:
+                resId = R.drawable.flavor_jelly;
+                break;
             default: resId = R.drawable.donuts;
         }
         holder.flavorImage.setImageResource(resId);
