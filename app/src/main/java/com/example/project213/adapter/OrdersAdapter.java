@@ -13,6 +13,7 @@ import java.util.List;
 
 
 import model.Order;
+import com.example.project213.R;
 
 public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewHolder> {
     private List<Order> orders = new ArrayList<>();
@@ -49,14 +50,13 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewH
     public int getItemCount() {
         return orders.size();
     }
-
     class OrderViewHolder extends RecyclerView.ViewHolder {
         TextView orderNumberText, orderTotalText;
 
         OrderViewHolder(@NonNull View itemView) {
             super(itemView);
-            orderNumberText = itemView.findByViewId(R.id.orderNumberText);
-            orderTotalText = itemView.findByViewId(R.id.orderTotalText);
+            orderNumberText = itemView.findViewById(R.id.orderNumberText);
+            orderTotalText = itemView.findViewById(R.id.orderTotalText);
 
             itemView.setOnClickListener(v -> {
                 int pos = getBindingAdapterPosition();

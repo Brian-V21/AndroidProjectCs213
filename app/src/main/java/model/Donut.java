@@ -8,7 +8,7 @@ import enums.DonutType;
 
 public class Donut extends MenuItem {
     private final DonutType type;
-    private final DonutFlavor flavor;
+    private final EnumSet<DonutFlavor> flavor;
 
     /**
      * Constructor for donut object
@@ -64,7 +64,7 @@ public class Donut extends MenuItem {
      * To get the flavor of the donut
      * @return donut flavor
      */
-    public DonutFlavor getFlavor() {
+    public EnumSet<DonutFlavor> getFlavor() {
         return flavor;
     }
 }

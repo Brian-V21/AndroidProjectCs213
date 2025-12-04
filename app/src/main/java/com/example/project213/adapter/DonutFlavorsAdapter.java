@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import enums.DonutFlavor;
+import com.example.project213.R;
 
 /**
  * RecyclerView Adapter for selecting multiple Donut Flavors
@@ -76,7 +78,7 @@ public class DonutFlavorsAdapter extends RecyclerView.Adapter<DonutFlavorsAdapte
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageSwitcher flavorImage;
+        public ImageView flavorImage;
         CheckBox checkBox;
 
         ViewHolder(@NonNull View itemView) {

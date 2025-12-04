@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import enums.SandwichAddOn;
+import com.example.project213.R;
 
 public class SandwichAddOnsAdapter extends RecyclerView.Adapter<SandwichAddOnsAdapter.ViewHolder> {
 
@@ -29,7 +30,7 @@ public class SandwichAddOnsAdapter extends RecyclerView.Adapter<SandwichAddOnsAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.item_addin, parent, false); // your checkbox layout
+                .inflate(R.layout.item_addin, parent, false); // your checkbox layout
         return new ViewHolder(view);
     }
 
@@ -63,7 +64,7 @@ public class SandwichAddOnsAdapter extends RecyclerView.Adapter<SandwichAddOnsAd
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            checkBox = itemView.findViewById(R.id.item_addon_checkbox);
+            checkBox = itemView.findViewById(R.id.item_addin_checkbox);
         }
     }
 

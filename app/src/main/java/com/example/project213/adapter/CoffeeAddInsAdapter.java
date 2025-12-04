@@ -13,6 +13,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import enums.CoffeeAddIn;
+import com.example.project213.R;
+
 
 /**
  * RecyclerView Adapter for showing Coffee Add-Ins with multi-selection.
