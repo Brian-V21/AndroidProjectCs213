@@ -1,25 +1,29 @@
 package com.example.project213.activity;
+
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.project213.R;
 import com.example.project213.adapter.ItemsAdapter;
 import com.example.project213.adapter.OrdersAdapter;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import model.Order;
 import model.OrdersManager;
-import com.example.project213.R;
 
 /**
- * Show placed orders, allows cancellation and export.
+ * Show placed orders, allows cancellation.
  */
-public class AllOrdersActivity extends AppCompatActivity implements OrdersActivity{
+public class AllOrdersActivity extends AppCompatActivity {
 
     private RecyclerView ordersRecyclerView;
     private RecyclerView itemsRecyclerView;
@@ -35,7 +39,10 @@ public class AllOrdersActivity extends AppCompatActivity implements OrdersActivi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_orders); // Create this layout XML
+        setContentView(R.layout.activity_all_orders);
+
+        // Get singleton
+        ordersManager = OrdersManager.getInstance();
 
         // Initialize views
         ordersRecyclerView = findViewById(R.id.ordersRecyclerView);
@@ -47,6 +54,7 @@ public class AllOrdersActivity extends AppCompatActivity implements OrdersActivi
             selectedOrder = order;
             showOrderDetails(order);
         });
+
         itemsAdapter = new ItemsAdapter();
 
         // Setup RecyclerViews
@@ -59,15 +67,20 @@ public class AllOrdersActivity extends AppCompatActivity implements OrdersActivi
         refreshOrders();
     }
 
-    public void setOrdersManager(OrdersManager manager) {
-        this.ordersManager = manager;
-        refreshOrders();
-    }
-
     private void refreshOrders() {
-        if (ordersManager != null) {
-            ordersAdapter.setOrders(ordersManager.getPlacedOrders());
+        if (ordersManager == null) {
+
+            return;
         }
+
+        List<Order> placed = ordersManager.getPlacedOrders();
+        if (placed == null) {
+            placed = Collections.emptyList();
+        }
+
+        // defensive copy
+        ordersAdapter.setOrders(new ArrayList<>(placed));
+
         itemsAdapter.setItems(Collections.emptyList());
         totalLabel.setText("$0.00");
     }
@@ -82,16 +95,13 @@ public class AllOrdersActivity extends AppCompatActivity implements OrdersActivi
         totalLabel.setText(String.format("$%.2f", order.getTotal()));
     }
 
-    // Cancel the currently selected order
     private void cancelSelectedOrder() {
         if (selectedOrder == null || ordersManager == null) return;
-
         ordersManager.cancelPlacedOrder(selectedOrder);
         selectedOrder = null;
         refreshOrders();
     }
 
-    // Show alert message
     private void show(String msg) {
         new AlertDialog.Builder(this)
                 .setMessage(msg)
