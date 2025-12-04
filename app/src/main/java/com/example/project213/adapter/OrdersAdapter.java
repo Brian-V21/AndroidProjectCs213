@@ -35,7 +35,7 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewH
     @Override
     public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.simple_list_item_1, parent, false);
+                .inflate(R.layout.item_order, parent, false);
         return new OrderViewHolder(view);
     }
 
@@ -51,11 +51,12 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewH
     }
 
     class OrderViewHolder extends RecyclerView.ViewHolder {
-        TextView text1;
+        TextView orderNumberText, orderTotalText;
 
         OrderViewHolder(@NonNull View itemView) {
             super(itemView);
-            text1 = itemView.findViewById(android.R.id.text1);
+            orderNumberText = itemView.findByViewId(R.id.orderNumberText);
+            orderTotalText = itemView.findByViewId(R.id.orderTotalText);
 
             itemView.setOnClickListener(v -> {
                 int pos = getBindingAdapterPosition();
@@ -68,8 +69,8 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewH
 
 
         void bind(Order order) {
-            text1.setText("Order #" + order.getOrderNumber()
-                    + " - Total: " + String.format("$%.2f", order.getTotal()));
+            orderNumberText.setText("Order #" + order.getOrderNumber());
+            orderTotalText.setText(String.format("$%.2f", order.getTotal()));
         }
     }
 }
