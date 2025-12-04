@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.MenuItem;
+import com.example.project213.R;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
