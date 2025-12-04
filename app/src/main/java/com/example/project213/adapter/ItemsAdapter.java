@@ -54,8 +54,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
 
             itemView.setOnClickListener(v -> {
                 int pos = getBindingAdapterPosition();
-                if (pos != RecyclerView.NO_POSITION) {
-
+                if (pos != RecyclerView.NO_POSITION && listener != null) {
+                    listener.onItemClick(items.get(pos));
                 }
             });
         }
