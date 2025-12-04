@@ -40,4 +40,9 @@ public abstract class MenuItem {
      * @return formatted String that describes menu item
      */
     public abstract String displayLine();
+
+    @Override
+    public String toString() {
+        return displayLine();
+    }
 }
