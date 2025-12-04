@@ -32,7 +32,7 @@ public class CoffeeAddInsAdapter extends RecyclerView.Adapter<CoffeeAddInsAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_list_item_multiple_choice, parent, false);
+                .inflate(R.layout.item_addin, parent, false);
         return new ViewHolder(view);
     }
 
@@ -66,7 +66,7 @@ public class CoffeeAddInsAdapter extends RecyclerView.Adapter<CoffeeAddInsAdapte
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            checkBox = (CheckBox) itemView.findViewById(android.R.id.text1);
+            checkBox = (CheckBox) itemView.findViewById(R.id.item_addin_checkbox);
         }
     }
 
