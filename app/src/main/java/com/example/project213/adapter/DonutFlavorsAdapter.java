@@ -33,7 +33,7 @@ public class DonutFlavorsAdapter extends RecyclerView.Adapter<DonutFlavorsAdapte
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Use a simple checkbox layout
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_list_item_multiple_choice, parent, false);
+                .inflate(R.layout.item_donut_flavor, parent, false);
         return new ViewHolder(view);
     }
 
@@ -67,7 +67,7 @@ public class DonutFlavorsAdapter extends RecyclerView.Adapter<DonutFlavorsAdapte
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            checkBox = itemView.findViewById(android.R.id.text1);
+            checkBox = itemView.findViewById(R.id.item_flavor_checkbox);
         }
     }
 
