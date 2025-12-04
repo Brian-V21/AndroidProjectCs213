@@ -43,6 +43,14 @@ public class DonutFlavorsAdapter extends RecyclerView.Adapter<DonutFlavorsAdapte
         holder.checkBox.setText(flavor.name());
         holder.checkBox.setChecked(selectedFlavors.contains(flavor));
 
+        int resId;
+        switch (flavor) {
+            case CHOCOLATE -> resId = R.drawable.flavor_chocolate;
+            case GLAZED -> resId = R.drawable.flavor_glazed;
+            default -> resId = R.drawable.donuts;
+        }
+        holder.flavorImage.setImageResource(resId);
+
         holder.checkBox.setOnClickListener(v -> {
             if (holder.checkBox.isChecked()) {
                 if (!selectedFlavors.contains(flavor)) selectedFlavors.add(flavor);
@@ -67,6 +75,7 @@ public class DonutFlavorsAdapter extends RecyclerView.Adapter<DonutFlavorsAdapte
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
+            flavorImage = itemView.findViewById(R.id.flavor_image);
             checkBox = itemView.findViewById(R.id.item_flavor_checkbox);
         }
     }
