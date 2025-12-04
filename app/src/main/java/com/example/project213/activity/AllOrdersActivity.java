@@ -14,11 +14,12 @@ import java.util.Collections;
 
 import model.Order;
 import model.OrdersManager;
+import com.example.project213.R;
 
 /**
  * Show placed orders, allows cancellation and export.
  */
-public class AllOrdersActivity extends AppCompatActivity implements OrdersActivity{
+public class AllOrdersActivity extends AppCompatActivity {
 
     private RecyclerView ordersRecyclerView;
     private RecyclerView itemsRecyclerView;
