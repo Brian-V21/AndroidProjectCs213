@@ -16,4 +16,8 @@
     <string name="price_label">Price:</string>
     <string name="add_to_order">Add to Order</string>
     <string name="donut_preview_label">Donut Preview</string>
+
+    <string name="coffee_size_label">Cup Size:</string>
+    <string name="coffee_addins_label">Add-ins:</string>
+    <string name="coffee_preview_label">Coffee Preview</string>
 </resources>
