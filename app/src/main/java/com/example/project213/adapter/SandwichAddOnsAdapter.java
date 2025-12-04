@@ -29,7 +29,7 @@ public class SandwichAddOnsAdapter extends RecyclerView.Adapter<SandwichAddOnsAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_addon, parent, false); // your checkbox layout
+                .inflate(android.R.layout.item_addin, parent, false); // your checkbox layout
         return new ViewHolder(view);
     }
 

@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import model.OrdersManager;
+import com.example.project213.R;
 
 public class MainActivity extends AppCompatActivity {
 

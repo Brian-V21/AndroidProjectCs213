@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,8 +15,9 @@ import java.util.ArrayList;
 import model.MenuItem;
 import model.Order;
 import model.OrdersManager;
+import com.example.project213.R;
 
-public class CurrentOrderActivity extends AppCompatActivity implements OrdersActivity {
+public class CurrentOrderActivity extends AppCompatActivity {
 
     private ListView itemsListView;
     private TextView subtotalLabel, taxLabel, totalLabel, orderNumberLabel;

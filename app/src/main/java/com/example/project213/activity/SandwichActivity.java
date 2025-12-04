@@ -21,6 +21,7 @@ import model.Order;
 import model.OrdersManager;
 import model.Sandwich;
 import com.example.project213.adapter.SandwichAddOnsAdapter;
+import com.example.project213.R;
 
 public class SandwichActivity extends AppCompatActivity {
 
@@ -31,7 +32,7 @@ public class SandwichActivity extends AppCompatActivity {
     private ImageView sandwichImage;
 
     // Setup AddOns RecyclerView
-    private SandwichAddOnsAdapter addOnsAdapter = new SandwichAddOnsAdapter(SandwichAddOn.values(), selected -> updatePrice());
+    private SandwichAddOnsAdapter addOnsAdapter;
     private int quantity = 1;
 
     @Override
@@ -49,6 +50,8 @@ public class SandwichActivity extends AppCompatActivity {
         priceLabel = findViewById(R.id.priceLabel);
         sandwichImage = findViewById(R.id.sandwichImage);
         addButton = findViewById(R.id.addSandwichButton);
+
+        addOnsAdapter = new SandwichAddOnsAdapter(SandwichAddOn.values(), selected -> updatePrice());
 
         // Setup Bread spinner
         ArrayAdapter<Bread> breadAdapter = new ArrayAdapter<>(this,

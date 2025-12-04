@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageSwitcher;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,9 +46,13 @@ public class DonutFlavorsAdapter extends RecyclerView.Adapter<DonutFlavorsAdapte
 
         int resId;
         switch (flavor) {
-            case CHOCOLATE -> resId = R.drawable.flavor_chocolate;
-            case GLAZED -> resId = R.drawable.flavor_glazed;
-            default -> resId = R.drawable.donuts;
+            case CHOCOLATE:
+                resId = R.drawable.flavor_chocolate;
+                break;
+            case GLAZED:
+                resId = R.drawable.flavor_glazed;
+                break;
+            default: resId = R.drawable.donuts;
         }
         holder.flavorImage.setImageResource(resId);
 
@@ -71,6 +76,7 @@ public class DonutFlavorsAdapter extends RecyclerView.Adapter<DonutFlavorsAdapte
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        public ImageSwitcher flavorImage;
         CheckBox checkBox;
 
         ViewHolder(@NonNull View itemView) {

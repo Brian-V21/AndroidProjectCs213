@@ -22,6 +22,7 @@ import model.Coffee;
 import model.MenuItem;
 import model.Order;
 import model.OrdersManager;
+import com.example.project213.R;
 
 public class CoffeeActivity extends AppCompatActivity {
 
@@ -79,7 +80,7 @@ public class CoffeeActivity extends AppCompatActivity {
 
         addButton.setOnClickListener(v -> addCoffeeToOrder());
 
-        coffeeImage.setImageResource(R.drawable.coffee_large); // put coffee_large.jpg in res/drawable
+        coffeeImage.setImageResource(R.drawable.coffee);
 
         updatePrice();
     }

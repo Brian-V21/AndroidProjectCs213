@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +21,7 @@ import model.Donut;
 import model.Order;
 import model.OrdersManager;
 import com.example.project213.adapter.DonutFlavorsAdapter;
+import com.example.project213.R;
 
 public class DonutActivity extends AppCompatActivity implements OrdersActivity {
 
@@ -84,10 +86,18 @@ public class DonutActivity extends AppCompatActivity implements OrdersActivity {
             public void onItemSelected(android.widget.AdapterView<?> parent, android.view.View view, int position, long id) {
                 DonutType type = (DonutType) typeSpinner.getSelectedItem();
                 switch (type) {
-                    case YEAST -> donutImage.setImageResource(R.drawable.yeast);
-                    case CAKE -> donutImage.setImageResource(R.drawable.cakedonut);
-                    case HOLE -> donutImage.setImageResource(R.drawable.holedonut);
-                    case SEASONAL -> donutImage.setImageResource(R.drawable.seasonal);
+                    case YEAST:
+                        donutImage.setImageResource(R.drawable.yeast);
+                        break;
+                    case CAKE:
+                        donutImage.setImageResource(R.drawable.cakedonut);
+                        break;
+                    case HOLE:
+                        donutImage.setImageResource(R.drawable.holedonut);
+                        break;
+                    case SEASONAL:
+                        donutImage.setImageResource(R.drawable.seasonal);
+                        break;
                 }
                 updatePrice();
             }

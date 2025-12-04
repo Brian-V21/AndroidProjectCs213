@@ -20,7 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="AllOrdersActivity$AllOrdersActivity" />
+        <activity android:name=".activity.AllOrdersActivity" />
+        <activity android:name=".activity.CoffeeActivity" />
+        <activity android:name=".activity.CurrentOrderActivity" />
+        <activity android:name=".activity.DonutActivity" />
+        <activity android:name=".activity.SandwichActivity" />
     </application>
 
 </manifest>

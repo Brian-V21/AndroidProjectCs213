@@ -74,7 +74,7 @@
 
             <TextView
                 android:id="@+id/quantityText"
-                android:layout_width="60dp"
+                android:layout_width="34dp"
                 android:layout_height="40dp"
                 android:gravity="center"
                 android:text="1"
@@ -82,7 +82,7 @@
 
             <Button
                 android:id="@+id/incrementQtyButton"
-                android:layout_width="40dp"
+                android:layout_width="36dp"
                 android:layout_height="40dp"
                 android:text="+"
                 android:textSize="18sp" />
@@ -139,8 +139,8 @@
             android:layout_height="160dp"
             android:scaleType="centerCrop"
             android:contentDescription="@string/coffee_preview_label"
-            android:src="@drawable/coffee_large"
-            tools:src="@drawable/coffee_large" />
+            android:src="@drawable/coffee"
+            tools:src="@drawable/coffee" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
