@@ -43,6 +43,10 @@ public class CoffeeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee);
 
+        // Use singleton
+        ordersManager = OrdersManager.getInstance();
+    
+
         // Initialize views
         sizeSpinner = findViewById(R.id.sizeSpinner);
         addInsRecyclerView = findViewById(R.id.addInsRecyclerView);
@@ -78,13 +82,6 @@ public class CoffeeActivity extends AppCompatActivity {
         coffeeImage.setImageResource(R.drawable.coffee_large); // put coffee_large.jpg in res/drawable
 
         updatePrice();
-    }
-
-    public void setOrdersManager(OrdersManager manager) {
-        this.ordersManager = manager;
-        if (ordersManager.getCurrentOrder() == null) {
-            ordersManager.startNewOrder();
-        }
     }
 
     private void updatePrice() {
