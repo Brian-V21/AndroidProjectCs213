@@ -1,5 +1,6 @@
 package com.example.project213.activity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -25,6 +26,8 @@ public class AllOrdersActivity extends AppCompatActivity {
     private RecyclerView itemsRecyclerView;
     private TextView totalLabel;
 
+    private Button cancelButton;
+
     private OrdersManager ordersManager;
 
     private OrdersAdapter ordersAdapter;
@@ -40,10 +43,21 @@ public class AllOrdersActivity extends AppCompatActivity {
         // Get singleton manager
         ordersManager = OrdersManager.getInstance();
 
+        //Button
+        cancelButton = findViewById(R.id.cancelOrderButton);
+
         // Initialize views
         ordersRecyclerView = findViewById(R.id.ordersRecyclerView);
         itemsRecyclerView = findViewById(R.id.itemsRecyclerView);
         totalLabel = findViewById(R.id.totalLabel);
+
+        //Set up Button
+        cancelButton.setOnClickListener(v -> {if (selectedOrder == null) {
+            show("Select an order first.");
+        } else {
+            cancelSelectedOrder();
+            show("Order cancelled");
+        }});
 
         // Setup adapters
         ordersAdapter = new OrdersAdapter(order -> {

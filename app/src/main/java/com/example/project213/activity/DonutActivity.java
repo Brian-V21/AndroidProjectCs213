@@ -146,7 +146,7 @@ public class DonutActivity extends AppCompatActivity implements OrdersActivity {
 
         Order order = ensureCurrentOrder();
         order.addItem(new Donut(type, selectedFlavors, quantity));
-        showAlert(" added to order #" + order.getOrderNumber());
+        showAlert("Donut added to order #" + order.getOrderNumber());
     }
 
     private Order ensureCurrentOrder() {
